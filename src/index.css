@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;800&display=swap');
+
+*{
+  font-family: "Baloo 2";
+  color: black;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: #6e7075;
+}
+
+h1{
+  margin: auto;
+  text-align: center;
+  vertical-align: middle;
+}
+
+
+.app-container{
+  min-height: 100vh;
+}
+
+.quiz-container{
+  min-height: 50vh;
+}
+
+.options-container{
+  display: flex;
+  cursor: pointer;
+  min-height: 50vh;
+}
+
+.options-container > div:first-child{
+  background-color: rgb(127, 72, 72);
+}
+
+.options-container :nth-child(2){
+  background-color: #FFDD82;
+}
+
+.options-container :nth-child(3){
+  color: black;
+  background-color: #CBA74E;
+}
+
+.options-container :nth-child(4){
+  background-color: #92731A;
+}
+
+
+.option{
+  justify-content: center;
+  border: 1px black solid;
+  border-radius: 50px;
+  flex-grow: 1;
+  flex-basis: 0;
+  background-color: transparent;
+}
+
