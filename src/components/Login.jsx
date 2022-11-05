@@ -13,10 +13,10 @@ export default function Login({onLogin}) {
 
     return (
         <>
-            <Box>
+            <Box bgGradient={"linear(to-l,#406470, #2F4858)"}>
                 <Center minHeight={'100vh'}>
                     <form onSubmit={onSubmitHandler}>
-                        <Box borderRadius={"10px"} p={"30px"} shadow="2xl">
+                        <Box borderRadius={"10px"} bg="white" p={"30px"} shadow="2xl">
                             <FormControl>
                                 <Center>
                                     <Heading m={"5"}>Login</Heading>

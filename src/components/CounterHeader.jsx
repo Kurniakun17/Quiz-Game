@@ -1,7 +1,7 @@
-import { Flex, Heading, Spacer } from '@chakra-ui/react';
+import { Box, Flex, Heading, Spacer } from '@chakra-ui/react';
 import React, {useEffect, useState} from 'react'
 
-export default function CounterHeader({num}) {
+export default function CounterHeader({num, TimesUp}) {
     const [seconds, setSeconds] = useState(localStorage.getItem('seconds')||60);
 
     useEffect(()=>{
@@ -11,7 +11,8 @@ export default function CounterHeader({num}) {
                 localStorage.setItem('seconds', seconds)
             }else{
                 clearInterval(counter)
-                localStorage.removeItem('seconds')
+                TimesUp();
+                localStorage.removeItem('seconds');
             }
         },1000)
 
@@ -23,10 +24,14 @@ export default function CounterHeader({num}) {
     
 
     return (
-        <Flex>
-            <Heading>{num+1}/10</Heading>
+        <Flex color={"white"}>
+            <Box bg={"#2F4858"} p={"10px"} borderRadius={"10px"}>
+                <Heading>{num+1}/10</Heading>
+            </Box>
             <Spacer></Spacer>
-            <Heading>{seconds}</Heading>
+            <Box bg={"#2F4858"} p={"10px"} borderRadius={"10px"}>
+                <Heading>00:{seconds}</Heading>
+            </Box>
         </Flex>
     )
 }

@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import Quiz from './components/Quiz'
-import Result from './components/Result'
 import Login from './components/Login';
-import { Box } from '@chakra-ui/react';
-import { Route, Routes } from 'react-router-dom';
+import { Box, Heading, Center } from '@chakra-ui/react';
 import Navbar from './components/Navbar';
+import Result from './components/Result';
 
 
 function App() {
@@ -68,30 +67,31 @@ function App() {
   }
 
   if(!user){
-    return(
-    <>
-    <Routes>
-      <Route path='/*' element={<Login onLogin={onLoginSubmit}></Login>}></Route>
-    </Routes>
-    </>
-    );
+    return <Login onLogin={onLoginSubmit}></Login>
   }
 
   if(loading){
-    return <p>Loading...</p>
+    return (
+        <Box bgGradient={"linear(to-l,#93BDAC,#71A09A)"}>
+          <Center minH={"100vh"}>
+            <Box>
+              <Heading >Loading . . .</Heading>
+            </Box>
+          </Center>
+        </Box>
+      )
+  }
+
+  if(questions.length === 0){
+    FetchData();
+    return;
   }
 
   return (
     <>
-      <Box minH={"100vh"}>
+      <Box minH={"100vh"} bgGradient={"linear(to-l,#93BDAC,#71A09A)"}>
         <Navbar user={user} onLogout={onLogoutHandler}></Navbar>
-        {/*
-          <Routes>
-            <Route path="/quiz" element/>
-            <Route path="/result/>
-          </Routes>
-         */}
-        {num === 10?<Result onReset={onResetHandler} rightAns={rightAns} wrongAns={wrongAns}></Result>:<Quiz question={questions[num]} onAnswer={onAnswerHandler} num={num} loading={loading} ></Quiz>}
+        {num === 10?<Result onReset={onResetHandler} rightAns={rightAns} wrongAns={wrongAns} ></Result>:<Quiz question={questions[num]} onAnswer={onAnswerHandler} num={num} loading={loading} onReset={onResetHandler} rightAns={rightAns} wrongAns={wrongAns}></Quiz>}
       </Box>
     </>
   )

@@ -8,11 +8,11 @@ export default function Navbar({user, onLogout}) {
     }
 
     return (
-    <Flex p={"15px"} backgroundColor='gray.400'>
+    <Flex p={"15px"} bgGradient={"linear(to-l,#BBDBBE,#93BDAC)"} minH={"10vh"} alignItems={"center"}>
         <Heading>Hello, {user}</Heading>
         <Spacer></Spacer>
-        <Flex gap={2} align={"center"}>
-            <FiLogOut size={"2rem"} onClick={onLogoutHandler}></FiLogOut>
+        <Flex gap={2} alignItems={"center"}>
+            <FiLogOut cursor={"pointer"} size={"2.5rem"} onClick={onLogoutHandler}></FiLogOut>
             <Heading display={"inline-block"}>Logout</Heading>
         </Flex>
         
