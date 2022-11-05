@@ -1,6 +1,7 @@
-import { Box, Flex, Center, Heading, Grid, Container } from '@chakra-ui/react';
-import Options from './Options'
+import { Box, Flex, Center, Heading, Grid, Spacer } from '@chakra-ui/react';
+import Options from './OptionsList'
 import React from 'react'
+import CounterHeader from './CounterHeader';
 
 export default function Quiz({question, onAnswer, num}) {
     let options = [...question.incorrect_answers, question.correct_answer]
@@ -20,9 +21,7 @@ export default function Quiz({question, onAnswer, num}) {
     return (
         <Center mt={13}>
             <Box p={"15px"} w="80%">
-                <Box>
-                    <Heading>{num+1}/10</Heading>
-                </Box>
+                <CounterHeader num={num}></CounterHeader>
                 <Flex minH={"80vh"} direction={"column"} >
                     <Center flex={"1 1 0"}>
                         <Heading>

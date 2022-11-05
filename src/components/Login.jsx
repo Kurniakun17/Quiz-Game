@@ -8,7 +8,6 @@ export default function Login({onLogin}) {
 
     function onSubmitHandler(e){
         e.preventDefault()
-        console.log("Fired")
         onLogin(keyword);
     }
 
@@ -17,14 +16,16 @@ export default function Login({onLogin}) {
             <Box>
                 <Center minHeight={'100vh'}>
                     <form onSubmit={onSubmitHandler}>
-                        <FormControl>
-                            <Center>
-                                <Heading m={10}>Login</Heading>
-                            </Center>
-                            <FormLabel>Username</FormLabel>
-                            <Input color="black" type={"text"} value={keyword} onChange={(e)=>setKeyword(e.target.value)} mb='10'></Input>
-                            <Button type='submit'>Submit</Button>
-                        </FormControl>
+                        <Box borderRadius={"10px"} p={"30px"} shadow="2xl">
+                            <FormControl>
+                                <Center>
+                                    <Heading m={"5"}>Login</Heading>
+                                </Center>
+                                <FormLabel>Username</FormLabel>
+                                <Input color="black" type={"text"} value={keyword} onChange={(e)=>setKeyword(e.target.value)} mb='10'></Input>
+                                <Button type='submit'>Submit</Button>
+                            </FormControl>
+                        </Box>
                     </form>
                 </Center>
             </Box>
