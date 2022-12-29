@@ -83,6 +83,7 @@ function App() {
   }
 
   if(questions.length === 0){
+    resetData();
     FetchData();
     return;
   }
