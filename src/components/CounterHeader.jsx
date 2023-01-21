@@ -16,8 +16,6 @@ export default function CounterHeader({num, TimesUp}) {
         },1000)
     },[seconds])
 
-    
-
     return (
         <Flex color={"white"}>
             <Box bg={"#2F4858"} p={"10px"} borderRadius={"10px"}>
