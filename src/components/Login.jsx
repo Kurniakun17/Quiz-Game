@@ -28,12 +28,6 @@ export default function Login({onLogin}) {
                     </form>
                 </Center>
             </Box>
-            {/* <Text>Kurnia</Text> */}
-            {/* <h1></h1>
-            <form onSubmit={onSubmitHandler}>
-                <input type="text" value={keyword} onChange={(e)=>setKeyword(e.target.value)}/>
-                <button type='submit'>Submit</button>
-            </form> */}
         </>
     )
 }
