@@ -4,6 +4,7 @@ import React, {useEffect, useState} from 'react'
 export default function CounterHeader({num, TimesUp}) {
     const [seconds, setSeconds] = useState(localStorage.getItem('seconds')||60);
 
+
     useEffect(()=>{
         const counter = setTimeout(()=>{
             if(seconds > 0){

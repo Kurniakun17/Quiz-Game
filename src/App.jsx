@@ -58,6 +58,9 @@ function App() {
   function onLogoutHandler(){
     resetData();
     setUser('')
+    setTimeout(()=>{
+      localStorage.removeItem('seconds')
+    }, 1000)
   }
 
   function onResetHandler(){

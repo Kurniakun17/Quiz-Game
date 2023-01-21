@@ -5,7 +5,6 @@ import React, { useState } from 'react'
 export default function Login({onLogin}) {
     const[keyword,setKeyword] = useState("");
 
-
     function onSubmitHandler(e){
         e.preventDefault()
         onLogin(keyword);
