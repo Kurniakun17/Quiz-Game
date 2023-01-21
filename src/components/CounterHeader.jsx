@@ -10,15 +10,10 @@ export default function CounterHeader({num, TimesUp}) {
                 setSeconds((prevSeconds)=>prevSeconds-1);
                 localStorage.setItem('seconds', seconds)
             }else{
-                clearInterval(counter)
                 TimesUp();
                 localStorage.removeItem('seconds');
             }
         },1000)
-
-        return ()=>{
-            clearInterval(counter)
-        }
     },[seconds])
 
     
@@ -30,7 +25,10 @@ export default function CounterHeader({num, TimesUp}) {
             </Box>
             <Spacer></Spacer>
             <Box bg={"#2F4858"} p={"10px"} borderRadius={"10px"}>
-                <Heading>00:{seconds}</Heading>
+                {seconds >= 60? 
+                    <Heading>01:00</Heading>: 
+                    <Heading>00:{seconds < 10 ? `0${seconds}`: seconds}</Heading>}
+
             </Box>
         </Flex>
     )
